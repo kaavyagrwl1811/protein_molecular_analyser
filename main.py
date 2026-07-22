@@ -96,6 +96,30 @@ def analyze_protein():
     print(f"peptide bond: {peptide_bonds}")
     print(f"water loss: {water_loss:.2f}Da")
     print(f"corrected weight: {corrected_weight:.2f} Da")
+    hydrophobic = {'A','V','I','L','M','F','W','Y','P'} 
+    hydrophilic = {'R','N','D','Q','E','K','S','T','H','C','G'}
+    hydrophobic_count= 0 
+    hydrophilic_count =0
+    for aa in protein:
+        if aa in hydrophobic:
+            hydrophobic_count +=1 
+            hydrophobic_perc= (hydrophobic_count/sequence_length)*100
+         if aa in hydrophilic:
+            hydrophilic_count +=1 
+            hydrophilic_perc= (hydrophilic_count/sequence_length)*100
+             
+             print(f"hydrophobic percentage:{hydrophobic_perc:.2f}%") 
+             print(f"hydrophilic percentage:{hydrophilic_perc:.2f}%")
+             
+        if hydrophobic_perc> hydrophilic_perc: 
+            print("protein is predominantly hydrophobic")
+            
+        elif hydrophilic_perc== hydrophobic_perc:
+            print("protein is equally hydrophobic and hydrophilic")
+            
+        else: 
+            print("protein is predominantly hydrophilic")
+
 
 
 while True:
