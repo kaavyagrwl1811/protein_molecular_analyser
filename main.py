@@ -2,7 +2,7 @@ import pandas as pd
 
 print(pd.__version__)
 """
-Protein Molecular Weight Calculator
+Protein Molecular Analyser
 ------------------------------------------
 A beginner-friendly tool to compute the molecular mass (in Daltons / Da)
 and analyse the protein sequence
@@ -24,7 +24,7 @@ AMINO_ACIDS = {
 def analyze_protein():
 
     print("=" * 50)
-    print("Protein Molecular Weight Calculator".center(50))
+    print("Protein Molecular Analyser".center(50))
     print("=" * 50)
 
     df = pd.DataFrame({
@@ -63,13 +63,17 @@ def analyze_protein():
     print("Amino Acid Composition".center(50))
     print("=" * 50)
 
-    for amino_acid, count in composition.items():
-        print(f"{AMINO_ACIDS[amino_acid]}:{amino_acid}:{count}")
+    
+    df= pd.DataFrame({"code":composition.keys(),
+                           "Amino acid":[AMINO_ACIDS[aa] for aa in composition.keys()],
+                           "count":composition.values()})
+    print(df)
 
     print("=" * 50)
     print("Molecular Weight".center(50))
     print("=" * 50)
     print(f"{total_weight:.2f} Da")
+    print(f"molecular weight in kDa:{total_weight/1000:.2f}kDa")
 
     print("=" * 50)
     print("Sequence Length".center(50))
@@ -96,32 +100,38 @@ def analyze_protein():
     print(f"peptide bond: {peptide_bonds}")
     print(f"water loss: {water_loss:.2f}Da")
     print(f"corrected weight: {corrected_weight:.2f} Da")
-    hydrophobic = {'A','V','I','L','M','F','W','Y','P'} 
+
+    print("="*50)
+    print("Hydrophobic and Hydrophilic composition".center(50))
+    print("="*50)
+
+    hydrophobic = {'A','V','I','L','M','F','W','Y','P'}
     hydrophilic = {'R','N','D','Q','E','K','S','T','H','C','G'}
-    hydrophobic_count= 0 
+
+    hydrophobic_count= 0
     hydrophilic_count =0
+    
     for aa in protein:
-        if aa in hydrophobic:
-            hydrophobic_count +=1 
-            hydrophobic_perc= (hydrophobic_count/sequence_length)*100
-         if aa in hydrophilic:
-            hydrophilic_count +=1 
-            hydrophilic_perc= (hydrophilic_count/sequence_length)*100
-             
-             print(f"hydrophobic percentage:{hydrophobic_perc:.2f}%") 
-             print(f"hydrophilic percentage:{hydrophilic_perc:.2f}%")
-             
-        if hydrophobic_perc> hydrophilic_perc: 
-            print("protein is predominantly hydrophobic")
-            
-        elif hydrophilic_perc== hydrophobic_perc:
-            print("protein is equally hydrophobic and hydrophilic")
-            
-        else: 
-            print("protein is predominantly hydrophilic")
+       if aa in hydrophobic:
+           hydrophobic_count +=1
+           hydrophobic_perc= (hydrophobic_count/sequence_length)*100
 
+       if aa in hydrophilic:
+           hydrophilic_count +=1
+           hydrophilic_perc= (hydrophilic_count/sequence_length)*100
 
+           print(f"hydrophobic percentage:{hydrophobic_perc:.2f}%")
+           print(f"hydrophilic percentage:{hydrophilic_perc:.2f}%")
+        
+           if hydrophobic_perc> hydrophilic_perc:
+               print("protein is predominantly hydrophobic")
+        
+           elif hydrophilic_perc== hydrophobic_perc:
+               print("protein is equally hydrophobic and hydrophilic")
 
+           else:
+             print("protein is predominantly hydrophilic")
+                    
 while True:
     analyze_protein()
 
