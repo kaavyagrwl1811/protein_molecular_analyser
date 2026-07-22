@@ -24,7 +24,7 @@ This project demonstrates how Python can be applied to solve real biological pro
 
 ### 📊 Amino Acid Composition
 
-*(Add screenshot here)*
+![img alt](https://github.com/kaavyagrwl1811/protein_molecular_analyser/blob/c608b95d77375f623839b8c4d1be6e0e65ad8b8f/Screenshot%202026-07-23%20003153.png)
 
 ---
 
