@@ -36,7 +36,7 @@ This project demonstrates how Python can be applied to solve real biological pro
 
 ### 🌊 Hydrophobicity Analysis
 
-*(Add screenshot here)*
+![img alt](https://github.com/kaavyagrwl1811/protein_molecular_analyser/blob/bde8b046306a38e6a1301c637ed7f910c9caa139/Screenshot%202026-07-23%20004202.png)
 
 ---
 
