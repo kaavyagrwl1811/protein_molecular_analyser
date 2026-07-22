@@ -12,7 +12,7 @@ This project demonstrates how Python can be applied to solve real biological pro
 
 ### 🧬 Home Screen
 
-*(Add a screenshot here after running the program.)*
+![img alt](https://github.com/harshitmishra0310/dna_mutation_simulator/blob/91cc7120cdfffdd2735990d9bc4bfa5552e71da7/Subsitution.png)
 
 ```text
 ==========================================
