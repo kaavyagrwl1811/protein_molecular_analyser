@@ -30,7 +30,7 @@ This project demonstrates how Python can be applied to solve real biological pro
 
 ### ⚖️ Molecular Weight Analysis
 
-*(Add screenshot here)*
+![img alt](https://github.com/kaavyagrwl1811/protein_molecular_analyser/blob/2ee39a3842ca9d166d03a396c3c325980c413cf7/Screenshot%202026-07-23%20003335.png)
 
 ---
 
