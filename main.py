@@ -1,0 +1,108 @@
+import pandas as pd
+
+print(pd.__version__)
+"""
+Protein Molecular Weight Calculator
+------------------------------------------
+A beginner-friendly tool to compute the molecular mass (in Daltons / Da)
+and analyse the protein sequence
+""" 
+AMINO_ACID_WEIGHTS = {
+    'A': 89.09,  'R': 174.20, 'N': 132.12, 'D': 133.10, 'C': 121.16,
+    'E': 147.13, 'Q': 146.15, 'G': 75.07,  'H': 155.16, 'I': 131.17,
+    'L': 131.17, 'K': 146.19, 'M': 149.21, 'F': 165.19, 'P': 97.12,
+    'S': 105.09, 'T': 119.12, 'W': 204.23, 'Y': 181.19, 'V': 117.15
+}
+
+AMINO_ACIDS = {
+    "A": "Alanine", "R": "Arginine", "N": "Asparagine", "D": "Aspartic Acid", "C": "Cysteine",
+    "E": "Glutamic Acid", "Q": "Glutamine", "G": "Glycine", "H": "Histidine", "I": "Isoleucine",
+    "L": "Leucine", "K": "Lysine", "M": "Methionine", "F": "Phenylalanine", "P": "Proline",
+    "S": "Serine", "T": "Threonine", "W": "Tryptophan", "Y": "Tyrosine", "V": "Valine"
+}
+
+def analyze_protein():
+
+    print("=" * 50)
+    print("Protein Molecular Weight Calculator".center(50))
+    print("=" * 50)
+
+    df = pd.DataFrame({
+        "Code": AMINO_ACIDS.keys(),
+        "Amino Acid": AMINO_ACIDS.values(),
+        "Molecular Weight (Da)": AMINO_ACID_WEIGHTS.values()
+    })
+    print(df)
+
+    protein = input("enter your protein sequence:").upper().strip()
+    total_weight = 0.0
+
+    if len(protein) == 0:
+        print("sequence cannot be null")
+        return
+
+    for amino_acid in protein:
+        if amino_acid not in AMINO_ACIDS:
+            print(f"invalid amino acid:{amino_acid}")
+            return
+
+    for amino_acid in protein:
+        total_weight += AMINO_ACID_WEIGHTS[amino_acid]
+        sequence_length = len(protein)
+        composition = {}
+
+    for amino_acid in protein:
+        if amino_acid in composition:
+            composition[amino_acid] += 1
+        else:
+            composition[amino_acid] = 1
+
+    print(f"Protein:{protein}")
+
+    print("=" * 50)
+    print("Amino Acid Composition".center(50))
+    print("=" * 50)
+
+    for amino_acid, count in composition.items():
+        print(f"{AMINO_ACIDS[amino_acid]}:{amino_acid}:{count}")
+
+    print("=" * 50)
+    print("Molecular Weight".center(50))
+    print("=" * 50)
+    print(f"{total_weight:.2f} Da")
+
+    print("=" * 50)
+    print("Sequence Length".center(50))
+    print("=" * 50)
+    print(sequence_length)
+
+    print("=" * 50)
+    print("Percentage Composition".center(50))
+    print("=" * 50)
+
+    for amino_acid, count in composition.items():
+        percentage = (count / sequence_length) * 100
+        print(f"{amino_acid}:{count}:{percentage:.2f}%")
+
+    peptide_bonds = sequence_length - 1
+    water_loss = peptide_bonds * 18.015
+    corrected_weight = total_weight - water_loss
+
+    print("=" * 50)
+    print("corrected weight".center(50))
+    print("=" * 50)
+    print("This accounts for peptide bond formation, which releases a water molecule for every amino acid added to the chain.")
+
+    print(f"peptide bond: {peptide_bonds}")
+    print(f"water loss: {water_loss:.2f}Da")
+    print(f"corrected weight: {corrected_weight:.2f} Da")
+
+
+while True:
+    analyze_protein()
+
+    choice = input("\nDo you want to analyze another protein? (Y/N): ").strip().upper()
+
+    if choice != "Y":
+        print("\nThank you for using the Protein Molecular Weight Calculator!")
+        break
