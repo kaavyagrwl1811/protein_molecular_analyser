@@ -1,208 +1,253 @@
-🧬 Protein Molecular Analyser
+# 🧬 Protein Molecular Analyser
 
-A Python-based bioinformatics application for analyzing protein sequences and computing molecular properties using computational biology principles.
+A Python-based bioinformatics tool that analyzes protein sequences and computes their molecular properties using fundamental principles of computational biology.
 
-<p align="center">
+The application validates protein sequences, calculates molecular weight, accounts for peptide bond formation, determines amino acid composition, and evaluates the hydrophobic and hydrophilic nature of proteins.
 
+This project demonstrates how Python can be applied to solve real biological problems through computational analysis.
 
+---
 
+## 📸 Screenshots
 
+### 🧬 Home Screen
 
+*(Add a screenshot here after running the program.)*
 
+```text
+==========================================
+        Protein Molecular Analyser
+==========================================
+```
 
+---
 
+### 📊 Amino Acid Composition
 
+*(Add screenshot here)*
 
-</p>
-🌟 Why this project?
+---
 
-Proteins are the workhorses of every living cell. Understanding their molecular properties is fundamental in biotechnology, molecular biology, drug discovery, and bioinformatics.
+### ⚖️ Molecular Weight Analysis
 
-This project demonstrates how Python can be used to transform a raw amino acid sequence into meaningful biochemical information by applying real scientific principles such as molecular weight calculation, peptide bond correction, amino acid composition analysis, and hydrophobicity assessment.
+*(Add screenshot here)*
 
-Rather than being a simple calculator, this project serves as a miniature bioinformatics toolkit for beginners.
+---
 
-✨ Features
-Feature	Description
-✅ Sequence Validation	Detects invalid amino acid symbols
-🧬 Molecular Weight	Calculates total molecular mass (Da & kDa)
-💧 Peptide Bond Correction	Accounts for water molecules released during peptide bond formation
-📊 Amino Acid Composition	Displays residue counts using Pandas
-📈 Percentage Composition	Calculates abundance of every amino acid
-📏 Sequence Length	Reports total protein length
-🌊 Hydrophobicity Analysis	Estimates hydrophobic vs hydrophilic composition
-🔁 Multiple Analyses	Analyze unlimited protein sequences without restarting
-⚙️ Technologies
-Technology	Purpose
-Python	Core programming language
-Pandas	Data visualization using DataFrames
-Dictionaries	Amino acid lookup tables
-Functions	Modular program structure
-Loops	Sequence traversal
-Conditional Statements	Validation and analysis
-Bioinformatics Principles	Biological computations
-🧬 Scientific Concepts Implemented
+### 🌊 Hydrophobicity Analysis
 
-This project incorporates several fundamental concepts used in computational biology:
+*(Add screenshot here)*
 
-Protein sequence validation
-Amino acid molecular masses
-Protein molecular weight calculation
-Peptide bond formation
-Water loss correction
-Amino acid frequency analysis
-Percentage abundance
-Hydrophobic vs hydrophilic residue analysis
-⚗️ Methodology
-1️⃣ Validate Sequence
+---
 
-The program first verifies that every character belongs to one of the 20 standard amino acids.
+## ✨ Features
 
-2️⃣ Calculate Molecular Weight
+- 🧬 Validates protein sequences containing the 20 standard amino acids
+- ⚖️ Calculates protein molecular weight in Daltons (Da)
+- 📏 Converts molecular weight into kiloDaltons (kDa)
+- 💧 Corrects molecular weight by accounting for peptide bond formation
+- 📊 Displays amino acid composition using a Pandas DataFrame
+- 📈 Calculates percentage abundance of each amino acid
+- 📐 Determines protein sequence length
+- 🌊 Calculates hydrophobic and hydrophilic residue composition
+- 🔁 Allows continuous analysis of multiple protein sequences
+- 🧪 Provides biologically meaningful interpretation of the protein
 
-Each amino acid contributes its molecular mass.
+---
 
-Total Weight = Σ Individual Amino Acid Weights
-3️⃣ Correct for Peptide Bond Formation
+## 🧠 Biological Workflow
 
-During protein synthesis,
-
-Every peptide bond releases one molecule of water (18.015 Da).
-
-Therefore,
-
-Corrected Weight =
-Σ Amino Acid Weights
-−
-(Number of Peptide Bonds × 18.015 Da)
-4️⃣ Composition Analysis
-
-The occurrence of every amino acid is counted and displayed in a Pandas DataFrame.
-
-5️⃣ Hydrophobicity Analysis
-
-Residues are classified as
-
-Hydrophobic
-Hydrophilic
-
-to estimate the overall biochemical nature of the protein.
-
-📂 Project Structure
-Protein-Molecular-Analyser/
-
-│── protein_analyser.py
-│── README.md
-│── requirements.txt
-🚀 Getting Started
-
-Clone the repository
-
-git clone https://github.com/yourusername/Protein-Molecular-Analyser.git
-
-Move into the project directory
-
-cd Protein-Molecular-Analyser
-
-Install dependencies
-
-pip install pandas
-
-Run
-
-python protein_analyser.py
-📷 Example
-Input
-MKWVTFISLL
-Output
-Protein Sequence
-MKWVTFISLL
-
-Sequence Length
-10
-
-Molecular Weight
-1204.34 Da
-
-Corrected Molecular Weight
-1042.21 Da
-
-Hydrophobic Composition
-70%
-
-Hydrophilic Composition
-30%
-
-Classification
-Predominantly Hydrophobic
-📊 Workflow
+```text
 Protein Sequence
         │
         ▼
 Sequence Validation
         │
         ▼
-Weight Calculation
+Molecular Weight Calculation
         │
         ▼
 Peptide Bond Correction
         │
         ▼
-Composition Analysis
+Amino Acid Composition
+        │
+        ▼
+Percentage Composition
         │
         ▼
 Hydrophobicity Analysis
         │
         ▼
 Final Report
-🎯 Learning Outcomes
+```
 
-This project strengthened practical skills in:
+---
 
-Python Programming
-Computational Biology
-Bioinformatics
-Data Structures
-Scientific Computing
-User Input Validation
-Algorithm Design
-Clean Code Practices
-🔮 Roadmap
+## 🧪 Analyses Performed
 
-Future improvements include:
+| Analysis | Description |
+|----------|-------------|
+| Sequence Validation | Ensures only valid amino acids are present |
+| Molecular Weight | Calculates total molecular mass |
+| Peptide Bond Correction | Accounts for water loss during peptide bond formation |
+| Sequence Length | Determines the number of amino acids |
+| Amino Acid Composition | Counts occurrences of each amino acid |
+| Percentage Composition | Calculates abundance of each residue |
+| Hydrophobicity Analysis | Classifies the protein based on residue composition |
 
-FASTA file support
-CSV/Excel export
-Protein isoelectric point (pI)
-Instability Index
-Aromaticity
-GRAVY score
-Extinction coefficient
-Molecular formula
-Streamlit web interface
-Tkinter GUI
-Protein visualization
-Batch sequence analysis
-DNA → Protein translation
-🤝 Contributing
+---
 
-Contributions are welcome!
+## 🧬 Example Run
 
-If you have ideas for improving the project, feel free to fork the repository, open an issue, or submit a pull request.
+### Input
 
-📜 License
+```text
+Enter your protein sequence:
 
-This project is released under the MIT License.
+MKWVTFISLLFLFSSAYSR
+```
 
-👩‍💻 Author
+### Output
 
-Kaavya Agarwal
+```text
+==================================================
+Protein Molecular Analyser
+==================================================
 
-Aspiring Biotechnology Engineer | Bioinformatics Enthusiast | Python Developer
+Protein:
+MKWVTFISLLFLFSSAYSR
 
-<p align="center">
-⭐ If you found this project useful, consider giving it a star!
+Sequence Length
+19
 
-Built with Python 🐍 • Inspired by Bioinformatics 🧬
+Molecular Weight
+2295.52 Da
 
-</p>
+Corrected Molecular Weight
+1971.25 Da
+
+Hydrophobic Residues
+63.16%
+
+Hydrophilic Residues
+36.84%
+
+Protein is predominantly hydrophobic.
+```
+
+---
+
+## 🧬 Understanding the Results
+
+- **Protein Sequence** displays the user-provided amino acid sequence.
+- **Sequence Length** represents the total number of amino acid residues.
+- **Molecular Weight** is calculated by summing the molecular masses of all amino acids.
+- **Corrected Molecular Weight** subtracts the mass of water molecules released during peptide bond formation.
+- **Amino Acid Composition** shows the frequency of each amino acid.
+- **Percentage Composition** indicates the relative abundance of each residue.
+- **Hydrophobicity Analysis** estimates whether the protein is predominantly hydrophobic or hydrophilic.
+
+---
+
+## ⚙️ Technologies Used
+
+- 🐍 Python 3
+- 📊 Pandas
+- 🧬 Bioinformatics concepts
+- 📚 Dictionaries
+- 🔄 Loops and Conditional Statements
+- 🧮 Functions
+- 🧪 Protein Chemistry Principles
+
+---
+
+## 🚀 How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/protein_molecular_analyser.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd protein_molecular_analyser
+```
+
+### 3. Install the required dependency
+
+```bash
+pip install pandas
+```
+
+### 4. Run the program
+
+```bash
+python protein_analyser.py
+```
+
+### 5. Enter a protein sequence when prompted.
+
+---
+
+## 📚 Scientific Concepts Demonstrated
+
+- Protein sequence validation
+- Amino acid molecular weights
+- Protein molecular weight calculation
+- Peptide bond formation
+- Water loss correction
+- Amino acid composition analysis
+- Percentage abundance calculation
+- Hydrophobic vs Hydrophilic residue classification
+- Computational protein analysis
+
+---
+
+## 🎯 Learning Outcomes
+
+This project helped strengthen my understanding of:
+
+- Python programming
+- Bioinformatics fundamentals
+- Protein chemistry
+- Scientific computing
+- Data structures and algorithms
+- User input validation
+- Data analysis using Pandas
+- Computational biology workflows
+
+---
+
+## 🚀 Future Improvements
+
+- 📂 FASTA file support
+- 📊 Export results to CSV and Excel
+- 📈 Graphical amino acid composition charts
+- 🧪 Protein isoelectric point (pI) calculation
+- 💧 GRAVY (Grand Average of Hydropathicity) score
+- 🧬 Instability Index
+- 🧪 Aromaticity calculation
+- 🖥️ GUI using Tkinter
+- 🌐 Streamlit web application
+- 📦 Batch protein analysis
+
+---
+
+## 👩‍💻 Author
+
+**Kaavya Agarwal**
+
+Aspiring Biotechnology Engineer passionate about **Bioinformatics, Computational Biology, Data Science, and Python Programming.**
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# ⭐ If you found this project interesting, consider giving the repository a star and following my bioinformatics journey!
